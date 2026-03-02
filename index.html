@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ローグライク - ダンジョン探索</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="title-screen visible" id="titleScreen">
+      <h1>ダンジョン探索</h1>
+      <p class="subtitle">ローグライク - ランダム生成のダンジョン</p>
+      <p class="controls">← ↑ → ↓ 移動 / 敵に隣接して自動攻撃</p>
+      <button id="start-btn">冒険を始める</button>
+    </div>
+    <div class="game-wrapper" id="gameWrapper">
+      <div class="game-board-wrapper">
+        <canvas id="gameCanvas"></canvas>
+      </div>
+      <div class="side-panel">
+        <div class="info-box">
+          <h3>ステータス</h3>
+          <p>HP: <span id="playerHp">20</span>/<span id="playerMaxHp">20</span></p>
+          <p>攻撃力: <span id="playerAtk">3</span></p>
+          <p>階層: <span id="floor">1</span></p>
+        </div>
+        <div class="info-box">
+          <h3>ログ</h3>
+          <div id="log" class="log-box"></div>
+        </div>
+      </div>
+    </div>
+    <div class="game-over-screen" id="gameOverScreen">
+      <h2>ゲームオーバー</h2>
+      <p>到達階層: <span id="finalFloor">1</span></p>
+      <button id="retry-btn">もう一度挑戦</button>
+    </div>
+    <div class="victory-screen" id="victoryScreen">
+      <h2>階段を発見！</h2>
+      <p>次の階へ進みますか？</p>
+      <button id="descend-btn">降りる</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
